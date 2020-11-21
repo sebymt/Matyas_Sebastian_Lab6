@@ -37,7 +37,6 @@ namespace Matyas_Sebastian_Lab6
         CollectionViewSource inventoryViewSource;
         CollectionViewSource customerOrdersViewSource;
 
-
         Binding custIdTextBoxBinding = new Binding();
         Binding firstNameTextBoxBinding = new Binding();
         Binding lastNameTextBoxBinding = new Binding();
@@ -45,6 +44,9 @@ namespace Matyas_Sebastian_Lab6
         Binding carIdTextBoxBinding = new Binding();
         Binding colorTextBoxBinding = new Binding();
         Binding makeTextBoxBinding = new Binding();
+
+        Binding cmbCustomersBinding = new Binding();
+        Binding cmbInventoryBinding = new Binding();
 
         public MainWindow()
         {
@@ -59,7 +61,6 @@ namespace Matyas_Sebastian_Lab6
             firstNameTextBox.SetBinding(TextBox.TextProperty, firstNameTextBoxBinding);
             lastNameTextBox.SetBinding(TextBox.TextProperty, lastNameTextBoxBinding);
 
-
             carIdTextBoxBinding.Path = new PropertyPath("CarId");
             colorTextBoxBinding.Path = new PropertyPath("Color");
             makeTextBoxBinding.Path = new PropertyPath("Make");
@@ -67,6 +68,12 @@ namespace Matyas_Sebastian_Lab6
             carIdTextBox.SetBinding(TextBox.TextProperty, carIdTextBoxBinding);
             colorTextBox.SetBinding(TextBox.TextProperty, colorTextBoxBinding);
             makeTextBox.SetBinding(TextBox.TextProperty, makeTextBoxBinding);
+
+            cmbCustomersBinding.Path = new PropertyPath("CustId");
+            cmbInventoryBinding.Path = new PropertyPath("CarId");
+
+            cmbCustomers.SetBinding(TextBox.TextProperty, cmbCustomersBinding);
+            cmbInventory.SetBinding(TextBox.TextProperty, cmbInventoryBinding);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -552,5 +559,74 @@ namespace Matyas_Sebastian_Lab6
 
         }
 
+        private void btnPrev3_Click(object sender, RoutedEventArgs e)
+        {
+            customerOrdersViewSource.View.MoveCurrentToPrevious();
+        }
+
+        private void btnNext3_Click(object sender, RoutedEventArgs e)
+        {
+            customerOrdersViewSource.View.MoveCurrentToNext();
+        }
+
+        private void btnCancel3_Click(object sender, RoutedEventArgs e)
+        {
+            action = ActionState.Nothing;
+
+            btnNew3.IsEnabled = true;
+            btnEdit3.IsEnabled = true;
+            btnDelete3.IsEnabled = true;
+            btnPrev3.IsEnabled = true;
+            btnNext3.IsEnabled = true;
+            btnSave3.IsEnabled = false;
+            btnCancel3.IsEnabled = false;
+            cmbCustomers.IsEnabled = false;
+            cmbInventory.IsEnabled = false;
+        }
+
+        private void btnDelete3_Click(object sender, RoutedEventArgs e)
+        {
+            action = ActionState.Delete;
+
+            btnNew3.IsEnabled = false;
+            btnEdit3.IsEnabled = false;
+            btnDelete3.IsEnabled = false;
+            btnSave3.IsEnabled = true;
+            btnCancel3.IsEnabled = true;
+            btnPrev3.IsEnabled = true;
+            btnNext3.IsEnabled = true;
+        }
+
+        private void btnEdit3_Click(object sender, RoutedEventArgs e)
+        {
+            action = ActionState.Edit;
+
+            btnNew3.IsEnabled = false;
+            btnEdit3.IsEnabled = false;
+            btnDelete3.IsEnabled = false;
+            btnSave3.IsEnabled = true;
+            btnCancel3.IsEnabled = true;
+            btnPrev3.IsEnabled = false;
+            btnNext3.IsEnabled = false;
+            cmbCustomers.IsEnabled = true;
+            cmbInventory.IsEnabled = true;
+
+        }
+
+        private void btnNew3_Click(object sender, RoutedEventArgs e)
+        {
+            action = ActionState.New;
+
+            btnNew3.IsEnabled = false;
+            btnEdit3.IsEnabled = false;
+            btnDelete3.IsEnabled = false;
+            btnSave3.IsEnabled = true;
+            btnCancel3.IsEnabled = true;
+            btnPrev3.IsEnabled = false;
+            btnNext3.IsEnabled = false;
+
+            cmbCustomers.IsEnabled = true;
+            cmbInventory.IsEnabled = true;
+        }
     }
 }

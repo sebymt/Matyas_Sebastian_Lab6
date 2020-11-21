@@ -157,13 +157,13 @@
                             <DataGridTextColumn x:Name="ColorColumn" Binding="{Binding Color}" Header="Color" Width="SizeToHeader"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="btnPrev3" Content="Previous" HorizontalAlignment="Left" Margin="206,272,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button x:Name="btnNext3" Content="Next" HorizontalAlignment="Left" Margin="583,272,0,0" VerticalAlignment="Top" Width="74"/>
-                    <Button x:Name="btnNew3" Content="New" HorizontalAlignment="Left" Margin="47,65,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button x:Name="btnEdit3" Content="Edit" HorizontalAlignment="Left" Margin="47,109,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button x:Name="btnDelete3" Content="Delete" HorizontalAlignment="Left" Margin="47,151,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="btnPrev3" Content="Previous" HorizontalAlignment="Left" Margin="206,272,0,0" VerticalAlignment="Top" Width="75" Click="btnPrev3_Click"/>
+                    <Button x:Name="btnNext3" Content="Next" HorizontalAlignment="Left" Margin="583,272,0,0" VerticalAlignment="Top" Width="74" Click="btnNext3_Click"/>
+                    <Button x:Name="btnNew3" Content="New" HorizontalAlignment="Left" Margin="47,65,0,0" VerticalAlignment="Top" Width="75" Click="btnNew3_Click"/>
+                    <Button x:Name="btnEdit3" Content="Edit" HorizontalAlignment="Left" Margin="47,109,0,0" VerticalAlignment="Top" Width="75" Click="btnEdit3_Click"/>
+                    <Button x:Name="btnDelete3" Content="Delete" HorizontalAlignment="Left" Margin="47,151,0,0" VerticalAlignment="Top" Width="75" Click="btnDelete3_Click"/>
                     <Button x:Name="btnSave3" Content="Save" HorizontalAlignment="Left" Margin="47,235,0,0" VerticalAlignment="Top" Width="75" Click="btnSave3_Click"/>
-                    <Button x:Name="btnCancel3" Content="Cancel" HorizontalAlignment="Left" Margin="47,272,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="btnCancel3" Content="Cancel" HorizontalAlignment="Left" Margin="47,272,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel3_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>
